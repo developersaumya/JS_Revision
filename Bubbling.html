@@ -1,0 +1,51 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, 
+ initial-scale=1.0">
+    <title>Event Bubbling Example</title>
+    <style>
+        #outerDiv {
+            padding: 20px;
+            border: 5px solid lightblue;
+            width: 250px;
+        }
+
+        #middleDiv {
+            padding: 20px;
+            border: 5px solid lightgreen;
+        }
+
+        #innerDiv {
+            padding: 20px;
+            border: 5px solid lightcoral;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="outerDiv">Top Most Parent DIV
+        <div id="middleDiv">Parent DIV
+            <div id="innerDiv">Child DIV </div>
+        </div>
+    </div>
+</body>
+<script>
+    document.getElementById("outerDiv").addEventListener("click",
+        function () {
+            console.log("Top Most Parent Div");
+        });
+
+    document.getElementById("middleDiv").addEventListener("click",
+        function () {
+            console.log("Parent Div");
+        });
+
+    document.getElementById("innerDiv").addEventListener("click",
+        function () {
+            console.log("Child Div");
+        });
+</script>
+
+</html>
